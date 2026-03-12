@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=VT323&display=swap');
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #050505;
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, #000 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Typography Headings */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Header Section */
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-bottom: 2px solid #0ff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.1);
+  color: #ffffff;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: #f0f;
+  box-shadow: 0 0 15px #f0f;
+}
+
+header h1 {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+  margin-bottom: 15px;
+}
+
+header p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-weight: 400;
+  color: #aaa;
+  max-width: 600px;
+  margin: 0 auto;
+  letter-spacing: 1px;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  background: rgba(10, 15, 20, 0.8);
+  border: 1px solid #0ff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.05);
+  padding: clamp(20px, 5vw, 40px);
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+section h2 {
+  margin-bottom: 30px;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: #f0f;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Streams Grid container */
+section div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+  justify-items: stretch;
+}
+
+/* Premium Game Buttons */
+.stream-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: rgba(0, 255, 255, 0.05);
+  color: #0ff;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.2s ease;
+  border: 1px solid #0ff;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.stream-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+  transition: all 0.3s ease;
+}
+
+.stream-btn:hover::before {
+  left: 100%;
+}
+
+.stream-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  color: #fff;
+  box-shadow: 0 0 15px #0ff;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #050505;
+  color: rgba(0, 255, 255, 0.5);
+  font-size: 0.9rem;
+  border-top: 1px solid #0ff;
+  box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.1);
+  letter-spacing: 1px;
+}
+
+/* AI Chatbot Glassmorphism -> Cyberpunk Terminal Styles */
+#open-chat-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 15px 30px;
+  background: #0f0f15;
+  color: #0ff;
+  border: 1px solid #0ff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  text-transform: uppercase;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+#open-chat-btn:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+#chatbot-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 380px;
+  height: 550px;
+  background: rgba(5, 5, 10, 0.95);
+  border: 1px solid #0ff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1001;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+}
+
+.chatbot-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.95) !important;
+}
+
+#chat-header {
+  background: #050505;
+  color: #0ff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #0ff;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+}
+
+#chat-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px #0ff;
+}
+
+#close-chat-btn {
+  background: none;
+  border: none;
+  color: #0ff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+#close-chat-btn:hover {
+  color: #f0f;
+  text-shadow: 0 0 10px #f0f;
+}
+
+#chat-messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #000;
+  background-image: linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 100% 2px;
+}
+
+/* Scrollbar customization */
+#chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+  background: #000;
+  border-left: 1px solid #333;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+  background: #0ff;
+}
+
+.message {
+  max-width: 85%;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.ai-message {
+  color: #0f0;
+  text-shadow: 0 0 2px #0f0;
+  align-self: flex-start;
+  border-left: 3px solid #0f0;
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.user-message {
+  color: #0ff;
+  text-shadow: 0 0 2px #0ff;
+  align-self: flex-end;
+  border-right: 3px solid #0ff;
+  background: rgba(0, 255, 255, 0.05);
+  text-align: right;
+}
+
+#chat-input-area {
+  display: flex;
+  padding: 15px;
+  background: #050505;
+  border-top: 1px solid #0ff;
+  gap: 10px;
+}
+
+#chat-input {
+  flex-grow: 1;
+  background: #000;
+  border: 1px solid #333;
+  color: #0f0;
+  padding: 10px 15px;
+  outline: none;
+  font-size: 1.1rem;
+  font-family: 'VT323', monospace;
+  transition: all 0.2s;
+}
+
+#chat-input::placeholder {
+  color: rgba(0, 255, 0, 0.3);
+}
+
+#chat-input:focus {
+  border-color: #0f0;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+#send-chat-btn {
+  background: #000;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+#send-chat-btn:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 15px #0ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 60px 15px;
+  }
+
+  header h1 {
+    letter-spacing: 1px;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+
+  #chatbot-container {
+    width: calc(100% - 40px);
+    height: 60vh;
+    right: 20px;
+    bottom: 90px;
+  }
+
+  #open-chat-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 40px 10px;
+  }
+
+  section div {
+    grid-template-columns: 1fr;
+  }
+
+  .stream-btn {
+    padding: 12px;
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Career Compass</title>
+    <!-- Modern Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>DISCOVER THE RIGHT CAREER PATH</h1>
+        <p>"Choose a job you love, and you will never have to work a day in your life.” — Confucius</p>
+    </header>
+    <main>
+        <section>
+            <h2>Choose Your Desired Stream</h2>
+            <div>
+                <a href="science.html" class="stream-btn">Science</a>
+                <a href="arts.html" class="stream-btn">Arts</a>
+                <a href="commerce.html" class="stream-btn">Commerce</a>
+                <a href="medical.html" class="stream-btn">Medical</a>
+            </div>
+        </section>
+
+        <!-- AI Chatbot UI -->
+        <div id="chatbot-container" class="chatbot-hidden">
+            <div id="chat-header">
+                <h4>Career Compass AI</h4>
+                <button id="close-chat-btn">&times;</button>
+            </div>
+            <div id="chat-messages">
+                <div class="message ai-message">
+                    Hello! I am the Career Compass AI Counselor. Can you tell me a little about your favorite subjects,
+                    hobbies, and how you prefer to work?
+                </div>
+            </div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type your answer...">
+                <button id="send-chat-btn">Send</button>
+            </div>
+        </div>
+
+        <!-- Floating Chat Button Action -->
+        <button id="open-chat-btn">🤖 Chat</button>
+
+    </main>
+    <footer>
+        <p>Career Compass | Built by Tulika Mahato</p>
+        <script src="script.js"></script>
+    </footer>
+
+</body>
+
+</html>
