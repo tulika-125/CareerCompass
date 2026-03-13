@@ -380,17 +380,17 @@ footer {
   }
 
   #chatbot-container {
-    width: calc(100% - 40px);
-    height: 60vh;
-    right: 20px;
-    bottom: 90px;
+    width: calc(100% - 30px);
+    height: 70vh;
+    right: 15px;
+    bottom: 85px;
   }
 
   #open-chat-btn {
     bottom: 20px;
-    right: 20px;
+    right: 15px;
     padding: 12px 20px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }
 
